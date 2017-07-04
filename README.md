@@ -6,6 +6,22 @@
 
 A docs for youbo.
 
+## Architecture
+
+```viz
+graph youbo {
+     desktop_web -- API
+     mobile_web -- API
+     android_app -- API
+     cms -- API
+     API -- api_server
+     api_server -- image_server
+     api_server -- database
+     api_server -- cache
+     cache -- database
+}
+```
+
 ## Category
 
 symbol | type | core tech
@@ -15,4 +31,4 @@ symbol | type | core tech
 [kiri](https://github.com/happylrd/youbo-cms)   | cms | react
 [Daphne](https://github.com/happylrd/youbo-android) | android app | android
 
-> Note: some repo is private now.
+> Note: some repos are private now.
