@@ -33,6 +33,22 @@ symbol | type | core tech
 
 > Note: some repos are private now.
 
+## UI design
+
+> ui design language: material design
+
+Type                 | Value    | Effect
+----                 | -----    | ------
+Dark Primary Color   | #0097A7  | <div style="width:30px;height:30px;border-radius:50%;background-color:#0097A7"></div>
+Primary Color        | #00BCD4  | <div style="width:30px;height:30px;border-radius:50%;background-color:#00BCD4"></div>
+Light Primary Color  | #B2EBF2  | <div style="width:30px;height:30px;border-radius:50%;background-color:#B2EBF2"></div>
+Text/Icons           | #FFFFFF  | <div style="width:30px;height:30px;border-radius:50%;background-color:#FFFFFF"></div>
+Accent Color         | #FF4081  | <div style="width:30px;height:30px;border-radius:50%;background-color:#FF4081"></div>
+Primary Text         | #212121  | <div style="width:30px;height:30px;border-radius:50%;background-color:#212121"></div>
+Secondary Text       | #757575  | <div style="width:30px;height:30px;border-radius:50%;background-color:#757575"></div>
+Divider Color        | #BDBDBD  | <div style="width:30px;height:30px;border-radius:50%;background-color:#BDBDBD"></div>
+
+
 ## Business
 
 ### Domain model
