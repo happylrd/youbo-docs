@@ -32,3 +32,35 @@ symbol | type | core tech
 [Daphne](https://github.com/happylrd/youbo-android) | android app | android
 
 > Note: some repos are private now.
+
+## Business
+
+### Domain model
+
+#### Relationship
+
+```puml
+User "1" -- "1" UserInfo : contain
+
+Group "1" -- "*" User : has
+
+Manager "1" -- "1" User : is
+
+Manager "1" -- "1" Group : is
+
+Manager "1" -- "*" TweetStream : manage
+
+TweetStream "1" -- "*" Tweet : has
+
+Tweet "1" -- "*" Fragment : has
+
+TweetStream "1" -- "1" CommentBoard : has
+
+Tweet "1" -- "1" CommentBoard : has
+
+CommentBoard "1" -- "*" Comment : has
+
+Tweet "*" -- "1" TweetStage : commit
+
+TweetStage "*" -- "1" TweetStream : merge
+```
