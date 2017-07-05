@@ -6,6 +6,10 @@
 
 A docs for youbo.
 
+**Note**: In order to get better reading experience, you can install
+- [markdown-preview-enhanced](https://github.com/shd101wyy/markdown-preview-enhanced)
+- [Graphviz](http://www.graphviz.org/)
+
 ## Architecture
 
 ```viz
@@ -56,27 +60,28 @@ Divider Color        | #BDBDBD  | <div style="width:30px;height:30px;border-radi
 #### Relationship
 
 ```puml
-User "1" -- "1" UserInfo : contain
+User "1" -- "*" UserFollow : following
 
-Group "1" -- "*" User : has
+User "1" -- "*" UserFollow : followed
 
-Manager "1" -- "1" User : is
+User "1" -- "*" Group : create
 
-Manager "1" -- "1" Group : is
+User "1" -- "*" Collection : has
 
-Manager "1" -- "*" TweetStream : manage
+User "1" -- "*" GroupMember : can_be
 
-TweetStream "1" -- "*" Tweet : has
+Group "1" -- "*" GroupMember : has
+
+Tweet "*" -- "1" User : created
 
 Tweet "1" -- "*" Fragment : has
 
-TweetStream "1" -- "1" CommentBoard : has
+User "1" -- "*" Comment : has
+Tweet "1" -- "*" Comment : has
 
-Tweet "1" -- "1" CommentBoard : has
+User "1" -- "*" Collection : has
+Tweet "1" -- "*" Collection : has
 
-CommentBoard "1" -- "*" Comment : has
-
-Tweet "*" -- "1" TweetStage : commit
-
-TweetStage "*" -- "1" TweetStream : merge
+User "1" -- "*" Favorite : has
+Tweet "1" -- "*" Favorite : has
 ```
