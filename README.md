@@ -74,7 +74,7 @@ Group "1" -- "*" GroupMember : has
 
 Tweet "*" -- "1" User : created
 
-Tweet "1" -- "*" Fragment : has
+Tweet "1" -- "*" TweetFragment : has
 
 User "1" -- "*" Comment : has
 Tweet "1" -- "*" Comment : has
