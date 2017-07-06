@@ -61,18 +61,18 @@ Divider Color        | #BDBDBD  | <div style="width:30px;height:30px;border-radi
 
 ```puml
 User "1" -- "*" UserFollow : following
-
 User "1" -- "*" UserFollow : followed
 
-User "1" -- "*" Group : create
+User "1" -- "*" Org : create
 
-User "1" -- "*" Collection : has
+OrgMember "*" -- "1" User : can_be
 
-User "1" -- "*" GroupMember : can_be
+Org "1" -- "*" OrgMember : has
 
-Group "1" -- "*" GroupMember : has
+User "*" -- "*" Role
+(User, Role) . UserRole
 
-Tweet "*" -- "1" User : created
+User "1" -- "*" Tweet : publish
 
 Tweet "1" -- "*" TweetFragment : has
 
