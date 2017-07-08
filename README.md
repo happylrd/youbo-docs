@@ -16,15 +16,16 @@ A docs for youbo.
 
 ```viz
 graph youbo {
-     desktop_web -- API
-     mobile_web -- API
-     android_app -- API
-     cms -- API
-     API -- api_server
-     api_server -- image_server
-     api_server -- database
-     api_server -- cache
-     cache -- database
+     Desktop_Web -- API
+     Mobile_Web -- API
+     Android_APP -- API
+     CMS -- Internal_API
+     API -- API_Server
+     Internal_API -- API_Server
+     API_Server -- Image_Server
+     API_Server -- Cache
+     API_Server -- Database
+     Cache -- Database
 }
 ```
 
@@ -78,7 +79,7 @@ User "1" -- "*" Tweet : publish
 
 Tweet "1" -- "*" TweetFragment : has
 
-User "1" -- "*" Comment : has
+User "1" -- "*" Comment : publish
 Tweet "1" -- "*" Comment : has
 
 User "1" -- "*" Collection : has
