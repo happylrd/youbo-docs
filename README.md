@@ -12,6 +12,8 @@ A docs for youbo.
 
 ## Architecture
 
+![Youbo项目架构图](./assets/youbo_architecture.png)
+
 ```viz
 graph youbo {
      desktop_web -- API
