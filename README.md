@@ -32,11 +32,12 @@ graph youbo {
 ## Category
 
 symbol | type | core tech
------- | ---- | ---
-[Iris](https://github.com/happylrd/youbo-api)   | api server | spring
-[Seria](https://github.com/happylrd/youbo-desktop)  | desktop&mobile web | vue
-[kiri](https://github.com/happylrd/youbo-cms)   | cms | react
-[Daphne](https://github.com/happylrd/youbo-android) | android app | android
+------ | ---- | ---------
+[Iris](https://github.com/happylrd/youbo-api)       | API Server  | Spring
+[Seria](https://github.com/happylrd/youbo-desktop)  | Desktop Web | Vue
+[Metis](https://github.com/happylrd/youbo-mobile)   | Mobile Web  | Vue
+[Daphne](https://github.com/happylrd/youbo-android) | Android APP | Android
+[kiri](https://github.com/happylrd/youbo-cms)       | CMS         | React
 
 > Note: some repos are private now.
 
