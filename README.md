@@ -88,3 +88,126 @@ Tweet "1" -- "*" Collection : has
 User "1" -- "*" Favorite : has
 Tweet "1" -- "*" Favorite : has
 ```
+
+#### Structure
+
+##### User
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+username    | varchar(128) not null unique      | 用户名
+password    | varchar(255) not null             | 密码
+email       | varchar(64) null                  | 邮箱地址
+phone       | varchar(64) null                  | 手机号
+nickname    | varchar(255) null                 | 昵称
+realname    | varchar(255) null                 | 真实姓名
+avatar      | varchar(255) null                 | 头像
+gender      | int not null                      | 性别
+birthday    | date null                         | 生日
+description | varchar(255) null                 | 描述
+enabled     | int not null                      | 是否激活
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+
+##### UserFollow
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+originId    | bigint null fk                    | 粉丝
+targetId    | bigint null fk                    | 被关注者
+
+##### Role
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+name        | varchar(255) null                 | 角色名
+
+##### UserRole
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+user_id     | bigint not null {{1/2 pk}}        | 用户id
+role_id     | bigint not null {{1/2 pk}}        | 角色id
+
+##### Org
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+name        | varchar(255) not null             | 组织名
+description | varchar(255) not null             | 组织描述
+picture     | varchar(255) not null             | 组织图片
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+ownerId     | bigint null fk                    | 组织创建者id
+
+##### OrgMember
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+role        | int not null                      | 组织成员角色
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+userId      | bigint null fk                    | 用户id
+orgId       | bigint null fk                    | 组织id
+
+##### Tweet
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+userId      | bigint null fk                    | 用户id
+
+##### TweetFragment
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+type        | int not null                      | 类型
+content     | varchar(255) not null             | 内容
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+tweetId     | bigint null fk                    | 推文id
+
+##### Comment
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+content     | varchar(255) not null             | 内容
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+userId      | bigint null fk                    | 用户id
+tweetId     | bigint null fk                    | 推文id
+
+##### Collection
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+enabled     | bit not null                      | 用于删除
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+userId      | bigint null fk                    | 用户id
+tweetId     | bigint null fk                    | 推文id
+
+##### Favorite
+
+Field       | Type                              | Desc
+-----       | ----                              | ----
+id          | bigint auto_increment primary key | id
+enabled     | bit not null                      | 用于删除
+createAt    | datetime not null                 | 创建时间
+updateAt    | datetime not null                 | 更新时间
+userId      | bigint null fk                    | 用户id
+tweetId     | bigint null fk                    | 推文id
